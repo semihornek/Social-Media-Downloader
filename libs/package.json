@@ -6,12 +6,6 @@
   "description": "Libraries for client and server.",
   "main": "src/index.ts",
   "private": true,
-  "dependencies": {
-    "typescript": "^4.9.5"
-  },
-  "devDependencies": {
-    "@types/node": "^18.14.6"
-  },
   "scripts": {
     "start": "ts-node src/index.ts",
     "build": "tsc",
