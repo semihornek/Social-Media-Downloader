@@ -1,0 +1,33 @@
+{
+  "name": "social-media-downloader",
+  "version": "1.0.0",
+  "author": "Semih Örnek",
+  "license": "MIT",
+  "description": "This app lets you download media from social media applications.",
+  "private": true,
+  "workspaces": [
+    "server",
+    "libs"
+  ],
+  "dependencies": {
+    "eslint": "^8.35.0",
+    "prettier": "^2.8.4",
+    "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.6",
+    "ts-node": "^10.9.1"
+  },
+  "scripts": {
+    "server": "cd server && ts-node src/app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/semihornek/Social-Media-Downloader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/semihornek/Social-Media-Downloader/issues"
+  },
+  "homepage": "https://github.com/semihornek/Social-Media-Downloader#readme"
+}

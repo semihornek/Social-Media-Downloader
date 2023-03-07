@@ -1,0 +1,21 @@
+{
+  "name": "@social/libs",
+  "version": "1.0.0",
+  "author": "Semih Örnek",
+  "license": "MIT",
+  "description": "Libraries for client and server.",
+  "main": "src/index.ts",
+  "private": true,
+  "dependencies": {
+    "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.6"
+  },
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
