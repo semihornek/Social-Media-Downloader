@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { getMessage } from "../controllers/youtube";
+import { getMessage } from "../controllers/instagram";
 
 const router = Router();
 
-// GET /youtube
+// GET /instagram
 router.get("/", getMessage);
 
 export default router;

@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import { pathName } from "@social/libs";
 
-import youtubeRoutes from "./routes/youtube";
+import { youtubeRoutes, instagramRoutes, facebookRoutes, twitterRoutes } from "./routes/index";
 
 const app = express();
 
@@ -23,6 +23,9 @@ app.use((_req, res, next) => {
  * Route Handling
  */
 app.use("/youtube", youtubeRoutes);
+app.use("/instagram", instagramRoutes);
+app.use("/facebook", facebookRoutes);
+app.use("/twitter", twitterRoutes);
 
 const port = process.env.PORT || 3001;
 
