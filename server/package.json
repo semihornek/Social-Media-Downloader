@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsc --build",
     "start": "yarn build && node dist/app.js",
-    "run": "ts-node src/app.ts"
+    "run-server": "ts-node src/app.ts"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
