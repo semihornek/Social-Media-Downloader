@@ -1,6 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { pathName } from "@social/libs";
+import { pathName } from "libs";
 
 import { youtubeRoutes, instagramRoutes, facebookRoutes, twitterRoutes } from "./routes/index";
 

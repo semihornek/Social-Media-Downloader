@@ -1,0 +1,26 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "src/app.ts",
+  "author": "Semih Örnek",
+  "license": "MIT",
+  "description": "Download media from social media applications.",
+  "scripts": {
+    "build": "tsc --build",
+    "start": "yarn build && node dist/app.js",
+    "run": "ts-node src/app.ts"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "typescript": "^4.9.5",
+    "ytdl-core": "^4.11.2"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.2",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.14.6",
+    "ts-node": "^10.9.1"
+  }
+}

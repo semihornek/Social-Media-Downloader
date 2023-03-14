@@ -1,15 +1,13 @@
 {
-  "name": "@social/libs",
+  "name": "libs",
   "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "Semih Örnek",
   "license": "MIT",
   "description": "Libraries for client and server.",
-  "main": "src/index.ts",
-  "private": true,
   "scripts": {
     "start": "ts-node src/index.ts",
-    "build": "tsc",
-    "build:watch": "tsc --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

@@ -1,18 +1,32 @@
 {
   "compilerOptions": {
-    "sourceMap": true,
+    /* Language and Environment */
+    "target": "es2022",
+
+    /* Modules */
+    "module": "commonjs",
+    "moduleResolution": "node",
+
+    /* Emit */
     "removeComments": true,
 
+    /* Interop Constraints */
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Type Checking */
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
     "noImplicitThis": true,
     "alwaysStrict": true,
-
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Completeness */
+    "skipLibCheck": true
   }
 }
