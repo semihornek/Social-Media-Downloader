@@ -1,4 +1,4 @@
-export interface YoutubeMediaFormatsInterface {
+export interface YouTubeMediaFormatsInterface {
   url: string;
   itag: number;
   content: string;

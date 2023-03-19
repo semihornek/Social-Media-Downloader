@@ -2,7 +2,7 @@ import ytdl from "ytdl-core";
 import fs from "fs";
 import { NextFunction, Request, Response } from "express";
 
-import { YoutubeMediaFormatsInterface } from "../interfaces/youtubeMediaFormats";
+import { YouTubeMediaFormatsInterface } from "../interfaces/youtubeMediaFormats";
 import { YouTubeMediaFormats } from "../constants/youtubeConstants";
 
 export const getMessage = (_req: Request, res: Response, _next: NextFunction) => {
@@ -17,7 +17,7 @@ export const getMediaFormats = async (req: Request, res: Response, _next: NextFu
   try {
     const { url } = req.body;
     // get media formats
-    const mediaFormats: YoutubeMediaFormatsInterface[] = [];
+    const mediaFormats: YouTubeMediaFormatsInterface[] = [];
     const info = await ytdl.getInfo(url);
     const itagValues = info.formats.map((format) => format.itag);
 
