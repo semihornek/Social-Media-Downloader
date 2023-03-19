@@ -1,12 +1,15 @@
 import { Router } from "express";
-import { getMessage, downloadVideo } from "../controllers/youtube";
+import { getMessage, getMediaFormats, downloadVideo } from "../controllers/youtube";
 
 const router = Router();
 
 // GET /youtube
 router.get("/", getMessage);
 
-// GET /youtube/downdload/
+// GET /youtube/getMediaFormats
+router.get("/getMediaFormats", getMediaFormats);
+
+// GET /youtube/download/
 router.get("/download", downloadVideo);
 
 export default router;

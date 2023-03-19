@@ -1,13 +1,35 @@
 import ytdl from "ytdl-core";
 import fs from "fs";
-
 import { NextFunction, Request, Response } from "express";
+
+import { YoutubeMediaFormatsInterface } from "../interfaces/youtubeMediaFormats";
+import { YouTubeMediaFormats } from "../constants/youtubeConstants";
 
 export const getMessage = (_req: Request, res: Response, _next: NextFunction) => {
   try {
     res.status(200).send("<p>Youtube Media Downloader</p>");
   } catch (error: any) {
     res.status(404).send(`Error: ${error.message}`);
+  }
+};
+
+export const getMediaFormats = async (req: Request, res: Response, _next: NextFunction) => {
+  try {
+    const { url } = req.body;
+    // get media formats
+    const mediaFormats: YoutubeMediaFormatsInterface[] = [];
+    const info = await ytdl.getInfo(url);
+    const itagValues = info.formats.map((format) => format.itag);
+
+    itagValues.forEach((itag) => {
+      if (itag in YouTubeMediaFormats) {
+        mediaFormats.push({ url, itag, ...YouTubeMediaFormats[itag] });
+      }
+    });
+
+    res.status(200).json({ mediaFormats });
+  } catch (error: any) {
+    res.status(404).json({ message: error.message });
   }
 };
 
