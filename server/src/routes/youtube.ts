@@ -10,6 +10,6 @@ router.get("/", getMessage);
 router.get("/getMediaFormats", getMediaFormats);
 
 // GET /youtube/download/
-router.get("/download", downloadVideo);
+router.post("/download", downloadVideo);
 
 export default router;

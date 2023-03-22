@@ -34,8 +34,9 @@ export const getMediaFormats = async (req: Request, res: Response, _next: NextFu
 
 export const downloadVideo = (req: Request, res: Response, _next: NextFunction) => {
   try {
-    const { url } = req.body;
-    ytdl(url).pipe(fs.createWriteStream("video.mp4"));
+    const { url, itag, container } = req.body;
+    ytdl(url, { filter: (format) => format.itag === +itag }).pipe(fs.createWriteStream(`video.${container}`));
+
     res.status(200).json({ message: "Video is downloading!", url });
   } catch (error: any) {
     res.status(404).json({ message: error.message });
