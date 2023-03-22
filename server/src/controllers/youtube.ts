@@ -19,11 +19,10 @@ export const getMediaFormats = async (req: Request, res: Response, _next: NextFu
     // get media formats
     const mediaFormats: YouTubeMediaFormatsInterface[] = [];
     const info = await ytdl.getInfo(url);
-    const itagValues = info.formats.map((format) => format.itag);
 
-    itagValues.forEach((itag) => {
-      if (itag in YouTubeMediaFormats) {
-        mediaFormats.push({ url, itag, ...YouTubeMediaFormats[itag] });
+    info.formats.forEach((format) => {
+      if (format.itag in YouTubeMediaFormats) {
+        mediaFormats.push({ url, googleVideoUrl: format.url, itag: format.itag, ...YouTubeMediaFormats[format.itag] });
       }
     });
 
