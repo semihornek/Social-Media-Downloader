@@ -20,6 +20,11 @@ export const YouTubeMediaFormats: {
     resolution: "1080p",
     container: "mp4",
   },
+  59: {
+    content: "videoandaudio",
+    resolution: "480p",
+    container: "mp4",
+  },
   133: {
     content: "video",
     resolution: "240p",
