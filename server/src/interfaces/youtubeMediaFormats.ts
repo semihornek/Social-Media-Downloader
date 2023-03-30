@@ -5,5 +5,5 @@ export interface YouTubeMediaFormatsInterface {
   content: string;
   resolution: string;
   container: string;
-  codec?: string; // optional now
+  codec: string;
 }
