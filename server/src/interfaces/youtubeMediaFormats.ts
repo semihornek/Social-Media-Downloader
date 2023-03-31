@@ -6,4 +6,5 @@ export interface YouTubeMediaFormatsInterface {
   resolution: string;
   container: string;
   codec: string;
+  fps: number;
 }
