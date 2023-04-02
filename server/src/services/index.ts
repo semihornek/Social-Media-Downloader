@@ -1,3 +1,3 @@
-import { getYoutubeMediaFormats } from "./youtube.service";
+import { getYoutubeMediaFormats, downloadYoutubeVideoWithAudio, downloadYoutubeVideoAndAudioInStream } from "./youtube.service";
 
-export { getYoutubeMediaFormats };
+export { getYoutubeMediaFormats, downloadYoutubeVideoWithAudio, downloadYoutubeVideoAndAudioInStream };
