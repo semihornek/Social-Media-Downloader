@@ -7,8 +7,9 @@ import ytdl from "ytdl-core";
 import ffmpeg from "ffmpeg-static";
 import { NextFunction, Request, Response } from "express";
 
-import { YouTubeMediaFormatsInterface } from "../interfaces/youtubeMediaFormats";
+import { getYoutubeMediaFormats } from "../services";
 import { YouTubeMediaFormats } from "../constants/youtubeConstants";
+import { YouTubeMediaFormatsInterface } from "../interfaces/youtubeMediaFormats";
 
 export const getMessage = (_req: Request, res: Response, _next: NextFunction) => {
   try {
@@ -22,14 +23,7 @@ export const getMediaFormats = async (req: Request, res: Response, _next: NextFu
   try {
     const { url } = req.body;
     // get media formats
-    const mediaFormats: YouTubeMediaFormatsInterface[] = [];
-    const info = await ytdl.getInfo(url);
-
-    info.formats.forEach((format) => {
-      if (format.itag in YouTubeMediaFormats) {
-        mediaFormats.push({ url, googleVideoUrl: format.url, itag: format.itag, ...YouTubeMediaFormats[format.itag] });
-      }
-    });
+    const mediaFormats: YouTubeMediaFormatsInterface[] = await getYoutubeMediaFormats(url);
 
     res.status(200).json({ mediaFormats });
   } catch (error: any) {
