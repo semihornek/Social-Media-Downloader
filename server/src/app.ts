@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import { pathName } from "libs";
 
-import { youtubeRoutes, instagramRoutes, facebookRoutes, twitterRoutes } from "./routes/index";
+import { youtubeRoutes, instagramRoutes, facebookRoutes, twitterRoutes } from "./routes";
 
 const app = express();
 
