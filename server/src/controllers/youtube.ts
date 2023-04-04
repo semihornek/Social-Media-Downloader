@@ -1,8 +1,8 @@
 import { NextFunction, Request, Response } from "express";
 
 import { downloadYoutubeVideoAndAudioInStream, downloadYoutubeVideoWithAudio, getYoutubeMediaFormats } from "../services";
-import { YouTubeMediaFormats } from "../constants/youtubeConstants";
-import { YouTubeMediaFormatsInterface } from "../interfaces/youtubeMediaFormats";
+import { YouTubeMediaFormats } from "../constants";
+import { YouTubeMediaFormatsInterface } from "../interfaces";
 
 export const getMessage = (_req: Request, res: Response, _next: NextFunction) => {
   try {

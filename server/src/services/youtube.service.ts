@@ -6,8 +6,8 @@ import { Writable } from "stream";
 import ytdl from "ytdl-core";
 import ffmpeg from "ffmpeg-static";
 
-import { YouTubeMediaFormats } from "../constants/youtubeConstants";
-import { YouTubeMediaFormatsInterface } from "../interfaces/youtubeMediaFormats";
+import { YouTubeMediaFormats } from "../constants";
+import { YouTubeMediaFormatsInterface } from "../interfaces";
 
 export const getYoutubeMediaFormats = async (url: string): Promise<YouTubeMediaFormatsInterface[]> => {
   try {
